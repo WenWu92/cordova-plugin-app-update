@@ -47,6 +47,12 @@ public class MsgBox {
             // 更新
             builder.setPositiveButton(msgHelper.getString(MsgHelper.UPDATE_UPDATE_BTN), onClickListener);
             noticeDialog = builder.create();
+
+	    noticeDialog.setOnCancelListener(new OnCancelListener() {
+	        public void onCancel(DialogInterface dialog) {
+		    System.exit(1);		    		    
+	        }
+	    })
         }
 
         if (!noticeDialog.isShowing()) noticeDialog.show();
